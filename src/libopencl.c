@@ -32,7 +32,8 @@ static const char *default_so_paths[] = {
 };
 #elif defined(_WIN32)
 static const char *default_so_paths[] = {
-  "OpenCL.dll"
+  "OpenCL.dll",
+  "C:\\\\Windows\\System32\\OpenCL.dll"
 };
 #elif defined(__linux__)
 static const char *default_so_paths[] = {
