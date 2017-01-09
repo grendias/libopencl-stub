@@ -117,10 +117,13 @@ clGetPlatformIDs(cl_uint          num_entries,
 {
   f_clGetPlatformIDs func;
 
-  if(!so_handle)
-    open_libopencl_so();
-
+  if(!so_handle) {
+    if(open_libopencl_so() != 0) {
+		return -1;
+	}
+  }
   func = (f_clGetPlatformIDs) dlsym(so_handle, "clGetPlatformIDs");
+
   if(func) {
     return func(num_entries, platforms, num_platforms);
   } else {
@@ -138,8 +141,11 @@ clGetPlatformInfo(cl_platform_id   platform,
 {
   f_clGetPlatformInfo func;
 
-  if(!so_handle)
-    open_libopencl_so();
+  if(!so_handle) {
+    if(open_libopencl_so() != 0) {
+		return -1;
+	}
+  }
 
   func = (f_clGetPlatformInfo) dlsym(so_handle, "clGetPlatformInfo");
   if(func) {
@@ -159,8 +165,11 @@ clGetDeviceIDs(cl_platform_id   platform,
 {
   f_clGetDeviceIDs func;
 
-  if(!so_handle)
-    open_libopencl_so();
+  if(!so_handle) {
+    if(open_libopencl_so() != 0) {
+		return -1;
+	}
+  }
 
   func = (f_clGetDeviceIDs) dlsym(so_handle, "clGetDeviceIDs");
   if(func) {
