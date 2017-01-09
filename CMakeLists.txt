@@ -21,11 +21,4 @@ set_target_properties(${CL_LIBRARY_NAME} PROPERTIES
     OUTPUT_NAME ${CL_LIBRARY_NAME}
     )
 
-install(TARGETS ${CL_LIBRARY_NAME}
-	LIBRARY DESTINATION lib
-	ARCHIVE DESTINATION lib
-	RUNTIME DESTINATION bin)
-
-
 file(GLOB HEADERS ./include/*.h ./include/CL/*.h)
-install(FILES ${HEADERS} DESTINATION include)
