@@ -11,8 +11,9 @@
 
 #include "libopencl.h"
 
-#ifdef _WIN32
-#include <Windows.h>
+//#if defined(_WIN32) && !defined(__MINGW32__)
+#if defined(_WIN32)
+#include <windows.h>
 #else
 #include <dlfcn.h>
 #endif
@@ -46,7 +47,8 @@ static const char *default_so_paths[] = {
 };
 #endif
 
-#if defined(_WIN32)
+//#if defined(_WIN32) && !defined(__MINGW32__)
+#if defined(_WIN32) 
 #define dlopen(filename, flags) LoadLibrary(filename)
 #define dlsym(hmod, func) GetProcAddress(hmod, func)
 #define dlclose(module) FreeLibrary(module)
