@@ -38,13 +38,14 @@ static const char *default_so_paths[] = {
 };
 #elif defined(__linux__)
 static const char *default_so_paths[] = {
+  "libOpenCL.so",
+  "/usr/local/cuda/lib64/libOpenCL.so",
   "/usr/lib/libOpenCL.so",
   "/usr/local/lib/libOpenCL.so",
   "/usr/local/lib/libpocl.so",
   "/usr/lib64/libOpenCL.so",
   "/usr/lib32/libOpenCL.so",
-  "/usr/lib/x86_64-linux-gnu/libOpenCL.so",
-  "libOpenCL.so"
+  "/usr/lib/x86_64-linux-gnu/libOpenCL.so"
 };
 #endif
 
