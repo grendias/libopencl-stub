@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.6)
+cmake_minimum_required (VERSION 2.8)
 enable_language (C)
 project (libOpenCL-stub)
 
