@@ -22,3 +22,8 @@ set_target_properties(${CL_LIBRARY_NAME} PROPERTIES
     )
 
 file(GLOB HEADERS ./include/*.h ./include/CL/*.h)
+
+install(TARGETS ${CL_LIBRARY_NAME}
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib
+    )
